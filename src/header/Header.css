@@ -2,9 +2,14 @@ header a {
     padding: 10px;
     text-decoration: none;
     text-transform: uppercase;
-    color: #fff;
+    color: #edefee;
     font-weight: 600;
     font-size: 14px;
+}
+
+header a:hover {
+    color: #495E57;
+    background-color: #edefee;
 }
 
 ul {
@@ -70,12 +75,12 @@ header .nav-list.closed {
     }
 
     nav a {
-        color: #000;
+        color: #495E57;
     }
 
     nav a:hover {
         background-color: #495E57;
-        color: #fff;
+        color: #edefee;
     }
 
     .logo {

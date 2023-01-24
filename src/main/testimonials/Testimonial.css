@@ -1,0 +1,37 @@
+.card {
+    background-color: #EDEFEE;
+    border-radius: 8px;
+    width: 60%;
+    margin: 1em auto;
+    padding: 1em;
+}
+
+.card > h5 {
+    margin: 0;
+}
+
+.card p {
+    margin: 0;
+    align-self: center;
+}
+
+.card img {
+    max-width: 30%;
+}
+
+.card > div {
+    display: flex;
+    gap: 1em;
+    margin-top: 0.5em;
+}
+
+.card .heading {
+    color: #000;
+    font-size: 1em;
+}
+
+.section-heading {
+    text-align: center;
+    color: #EDEFEE;
+    font-size: 40px;
+}

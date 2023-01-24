@@ -1,0 +1,21 @@
+.pills {
+    display: flex;
+    overflow: scroll;
+    border-bottom: 1px solid #EDEFEE;
+    padding-bottom: 1em;
+}
+
+.pills > li {
+    padding: 10px;
+    margin: 0 10px;
+    min-width: 5em;
+    text-align: center;
+    background-color: #EDEFEE;
+    color: #495E57;
+    border-radius: 16px;
+    font-weight: 700;
+}
+
+.pills > li:nth-child(1) {
+    margin-left: 0;
+}
