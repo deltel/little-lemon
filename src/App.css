@@ -44,3 +44,34 @@
   padding-top: 1rem;
   min-height: 10rem;
 }
+
+.dish {
+  display: flex;
+  gap: 1rem;
+  border-bottom: 1px solid #edefee;
+}
+
+.dish-name {
+  margin-bottom: 0.5rem;
+}
+
+.dish-img-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 18%;
+  align-self: center;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.dish-description {
+  margin: 0;
+  max-height: 2.8rem;
+  overflow: hidden;
+}
+
+.dish-price {
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
