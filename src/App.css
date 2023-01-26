@@ -53,6 +53,7 @@ body {
 .main-section > div {
   display: flex;
   min-height: 10rem;
+  justify-content: space-between;
 }
 
 .dishes {
@@ -108,4 +109,68 @@ body {
 
 .more-info h3 {
   font-size: 24px;
+}
+
+@media (min-width: 900px) {
+  .main-section {
+    padding-left: 7em;
+    padding-right: 7em;
+  }
+
+  .main-left {
+    max-width: 20em;
+    justify-content: center;
+    gap: 2em;
+  }
+
+  .title {
+    font-size: 4em;
+  }
+  
+  .sub-title {
+    font-size: 2.5em;
+  }
+
+  .main-left > p {
+    font-size: 1em;
+  }
+
+  .main-section:nth-child(1) {
+    position: relative;
+  }
+
+  .main-img-container {
+    aspect-ratio: 3/4;
+    width: 18em;
+    position: absolute;
+    top: 2em;
+    right: 7em;
+  }
+}
+
+@media (min-width: 1400px) {
+  .main-section {
+    padding-left: 20em;
+    padding-right: 20em;
+  }
+
+  .main-left {
+    max-width: 35em;
+  }
+
+  .title {
+    font-size: 5em;
+  }
+  
+  .sub-title {
+    font-size: 3em;
+  }
+
+  .main-left > p {
+    font-size: 1.5em;
+  }
+
+  .main-img-container {
+    right: 20em;
+  }
 }
