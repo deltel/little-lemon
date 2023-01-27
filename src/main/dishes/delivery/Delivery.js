@@ -3,7 +3,7 @@ import "./Delivery.css";
 
 export function Delivery() {
     return (
-        <section>
+        <section className="delivery">
             <h2>Order for Delivery!</h2>
             <ul className="pills">
                 <li>Lunch</li>

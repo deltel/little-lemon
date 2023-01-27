@@ -1,0 +1,87 @@
+.dish {
+    display: flex;
+    gap: 1rem;
+    border-bottom: 1px solid #edefee;
+}
+
+.dish-name {
+    margin-bottom: 0.5rem;
+}
+
+.dish-img-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 18%;
+    align-self: center;
+    aspect-ratio: 1;
+    overflow: hidden;
+}
+
+.dish-description {
+    margin: 0;
+    max-height: 2.6rem;
+    color: #495E57;
+    overflow: hidden;
+}
+
+.dish-price {
+    font-weight: 600;
+    margin-top: 0.5rem;
+    color: #495E57;
+}
+
+.dish-footer {
+    display: none;
+}
+
+@media (min-width: 900px) {
+    .dish {
+        flex-direction: column;
+        max-width: 14em;
+        background-color: #edefee;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+    }
+
+    .dish-img-container {
+        max-width: 100%;
+        order: 1;
+        justify-content: flex-start;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+        aspect-ratio: 3/2;
+    }
+
+    .dish-info {
+        order: 2;
+        padding-inline: 1em;
+        position: relative;
+    }
+
+    .dish-price {
+        color: #F88D11;
+        position: absolute;
+        top: 1em;
+        right: 1em;
+    }
+
+    .dish-footer {
+        display: flex;
+        order: 2;
+        align-items: center;
+        gap: 1em;
+        padding-inline: 1em;
+    }
+
+    .cycling-icon {
+        width: 1em;
+        height: 1em;
+    }
+}
+
+@media (min-width: 1400px) {
+    .dish {
+        max-width: 16em;
+    }
+}

@@ -1,0 +1,53 @@
+.more-info>* {
+    margin: 0;
+}
+
+.more-info h2,
+.more-info h3 {
+    font-family: 'Markazi Text';
+    font-weight: 500;
+}
+
+.more-info h2 {
+    font-size: 40px;
+}
+
+.more-info h3 {
+    font-size: 24px;
+}
+
+.more-info-images {
+    display: none;
+}
+
+@media (min-width: 900px) {
+    .more-info-images {
+        display: block;
+        position: relative;
+        min-width: 35em;
+        height: 20rem;
+    }
+
+    .main-section:last-child {
+        display: flex;
+    }
+
+    .img-container {
+        width: 22em;
+        position: absolute;
+    }
+
+    .img-container:first-child {
+        left: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    .img-container:last-child {
+        right: 0;
+    }
+
+    .img-container > img {
+        width:100%;
+    }
+}

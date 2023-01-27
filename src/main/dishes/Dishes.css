@@ -1,0 +1,29 @@
+.dishes {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.dishes-heading {
+    display: none;
+}
+
+@media (min-width: 900px) {
+    .dishes-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 7em;
+        padding-right: 2em;
+    }
+
+    .dishes-heading .sub-title {
+        color: #495E57;
+    }
+
+    .dishes {
+        display: flex;
+        overflow: scroll;
+        gap: 1em;
+        margin-top: 2em;
+    }
+}

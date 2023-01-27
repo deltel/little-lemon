@@ -19,3 +19,9 @@
 .pills > li:nth-child(1) {
     margin-left: 0;
 }
+
+@media (min-width: 900px) {
+    .delivery {
+        display:none;
+    }
+}

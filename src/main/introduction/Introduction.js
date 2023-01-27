@@ -7,7 +7,7 @@ export function Introduction() {
         <section className="main-section">
             <h1 className="title">Little Lemon</h1>
             <h3 className="sub-title">Chicago</h3>
-            <div>
+            <div className="intro-main">
                 <div className="main-left">
                     <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
                     <Button>Reserve a table</Button>

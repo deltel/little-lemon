@@ -1,0 +1,14 @@
+.testimonials .card:nth-child(odd) {
+    display: none;
+}
+
+@media (min-width: 900px) {   
+    .testimonials {
+        display: flex;
+        gap: 1em;
+    }
+
+    .testimonials .card:nth-child(odd) {
+        display: block;
+    }
+}
