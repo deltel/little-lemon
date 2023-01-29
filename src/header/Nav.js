@@ -1,15 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export function Nav({ className }) {
     return (
         <section className={"nav-list" + ` ${className}`}>
             <ul>
-                <li><a href="#">home</a></li>
-                <li><a href="#">about</a></li>
-                <li><a href="#">menu</a></li>
-                <li><a href="#">reservations</a></li>
-                <li><a href="#">order online</a></li>
-                <li><a href="#">login</a></li>
+                <li><Link to="/">home</Link></li>
+                <li><Link to="/about">about</Link></li>
+                <li><Link to="/menu">menu</Link></li>
+                <li><Link to="/booking">reservations</Link></li>
+                <li><Link to="/order">order online</Link></li>
+                <li><Link to="/login">login</Link></li>
             </ul>
         </section>
     );

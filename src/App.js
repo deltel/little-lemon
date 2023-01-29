@@ -1,15 +1,28 @@
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
 import './App.css';
-import { Header } from './header/Header';
-import { Main } from './main/Main';
-import { Footer } from './footer/Footer';
+import { BookingPage } from "./pages/BookingPage";
+import { HomePage } from "./pages/HomePage";
+import ErrorPage from "./pages/ErrorPage";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "/booking",
+    element: <BookingPage />
+  }
+]);
 
 function App() {
   return (
-    <>
-      <Header />
-      <Main />
-      <Footer />
-    </>
+    <RouterProvider router={router} />
   );
 }
 
