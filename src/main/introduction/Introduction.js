@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "../../common/button/Button";
+import { ImageContainer } from "../img-container/ImageContainer";
 import restaurantFood from "./restaurantfood.jpg";
 
 export function Introduction() {
@@ -12,9 +13,7 @@ export function Introduction() {
                     <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
                     <Button>Reserve a table</Button>
                 </div>
-                <div className="main-img-container">
-                    <img src={restaurantFood} alt="sample food" className="main-img" />
-                </div>
+                <ImageContainer className="main-img-container" img={restaurantFood} altText="sample food" imgClassName="main-img" />
             </div>
         </section>
     );

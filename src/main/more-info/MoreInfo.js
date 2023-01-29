@@ -3,6 +3,7 @@ import "./MoreInfo.css";
 
 import marioAndAdrianA from "./mario-and-adrian-a.jpg";
 import marioAndAdrianB from "./mario-and-adrian-b.jpg";
+import { ImageContainer } from "../img-container/ImageContainer";
 
 export function MoreInfo() {
     return (
@@ -13,12 +14,8 @@ export function MoreInfo() {
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             </div>
             <div className="more-info-images">
-                <div className="img-container">
-                    <img src={marioAndAdrianA} alt="mario and adrian" />
-                </div>
-                <div className="img-container">
-                    <img src={marioAndAdrianB} alt="mario and adrian" />
-                </div>
+                <ImageContainer className="img-container" img={marioAndAdrianA} altText="mario and adrian" />
+                <ImageContainer className="img-container" img={marioAndAdrianB} altText="mario and adrian" />
             </div>
         </section>
     );
