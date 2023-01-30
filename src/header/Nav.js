@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export function Nav({ className }) {
     return (
-        <section className={"nav-list" + ` ${className}`}>
+        <section className={"nav-list " + className}>
             <ul>
                 <li><Link to="/">home</Link></li>
                 <li><Link to="/about">about</Link></li>

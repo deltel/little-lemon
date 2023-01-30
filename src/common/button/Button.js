@@ -1,9 +1,9 @@
 import React from "react";
 import "./Button.css";
 
-export function Button({ children }) {
+export function Button({ type = "button", children }) {
     return (
-        <button className="btn">
+        <button className="btn" type={type}>
             {children}
         </button>
     );

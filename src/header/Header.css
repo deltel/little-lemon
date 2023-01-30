@@ -38,24 +38,7 @@ header .nav-list.closed {
     display: none;
 }
 
-.nav-button {
-    background-color: transparent;
-    border: none;
-    position: relative;
-}
-
-.nav-button img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
 @media (min-width: 900px) {
-    .nav-button {
-        display: none;
-    }
-
     header .nav-list {
         background-color: #fff;
         position: inherit;
