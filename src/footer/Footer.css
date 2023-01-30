@@ -1,18 +1,28 @@
-footer {
+footer.main {
     background-color: #495E57;
     padding: 10px;
 }
 
-footer .logo {
+footer.main .logo {
     height: 4rem;
 }
+
+footer.basic {
+    background-color: #495E57;
+    padding-left: 1em;
+}
+
+footer.basic .logo {
+    height: 4rem;
+}
+
 
 .footer-section {
     display: none;
 }
 
 @media (min-width: 900px) {
-    footer {
+    footer.main {
         display: flex;
         background-color: #495E57;
         justify-content: center;
@@ -52,5 +62,10 @@ footer .logo {
         font-weight: 900;
         font-size: 16px;
         margin-bottom: 0;
+    }
+
+    footer.basic {
+        background-color: #fff;
+        padding-left: 1em;
     }
 }

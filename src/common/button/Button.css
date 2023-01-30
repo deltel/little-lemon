@@ -12,6 +12,7 @@
     background-color: #495E57;
     color: #fff;
     cursor: pointer;
+    border: 2px solid #fff;
 }
 
 @media (min-width: 900px) {

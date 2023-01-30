@@ -1,5 +1,6 @@
 import React from "react";
 import { BookingForm } from "../booking-form/BookingForm";
+import { BasicFooter } from "../footer/BasicFooter";
 import { Header } from "../header/Header";
 
 export function BookingPage() {
@@ -7,6 +8,7 @@ export function BookingPage() {
         <>
             <Header />
             <BookingForm />
+            <BasicFooter />
         </>
     );
 }

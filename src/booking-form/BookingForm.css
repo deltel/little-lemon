@@ -2,7 +2,7 @@
     width:100%;
 }
 
-.form-companion p {
+.form-companion p, .reservation-title {
     display: none;
 }
 
@@ -46,5 +46,49 @@
 @media (min-width: 900px) {
     .back-btn {
         display: none;
+    }
+
+    .form-section {
+        display: flex;
+        padding: 2em 7em;
+        gap: 2em;
+        background-color: #495E57;
+    }
+
+    .form-companion {
+        flex: 1;
+    }
+
+    .form {
+        flex: 1;
+    }
+
+    .form-companion p {
+        display: block;
+    }
+
+    .form h2, .form p {
+        display: none;
+    }
+
+    .reservation-img-container {
+        border-radius: 1em;
+        overflow: hidden;
+    }
+
+    .form-group {
+        background-color: #edefee;
+        border-bottom: none;
+        margin-bottom: 1em;
+        border-radius: 0.5em;
+        padding: 1em;
+    }
+
+    .form {
+        padding: 0;
+    }
+
+    .reservation-title {
+        background-color: #495E57;
     }
 }

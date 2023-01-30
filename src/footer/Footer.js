@@ -5,7 +5,7 @@ import "./Footer.css";
 
 export function Footer() {
     return (
-        <footer>
+        <footer className="main">
             <img src={Logo} alt="logo" className="logo" />
             <section className="footer-section">
                 <h6 className="footer-heading">DOORMAT NAVIGATION</h6>
