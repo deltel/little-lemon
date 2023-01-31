@@ -1,18 +1,19 @@
 import React, { useReducer, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { BookingForm } from "../forms/booking/BookingForm";
 import { BasicFooter } from "../footer/BasicFooter";
 import { Header } from "../header/Header";
-import { ContactForm } from "../forms/contact/ContactForm";
+import { fetchAPI, submitAPI } from "../temp";
 
-export const updateTimes = (state, action) => {
-    if(action.type === "GET_AVAILABLE_TIMES") {
-        return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+export const updateTimes = (_, action) => {
+    if (action.type === "GET_AVAILABLE_TIMES") {
+        return fetchAPI(new Date(action.payload));
     } else {
         return [];
     }
 }
 
-export const initializeTimes = (date) => ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+export const initializeTimes = (date) => fetchAPI(new Date(date));
 
 export function BookingPage() {
     const [availableTimes, dispatch] = useReducer(updateTimes, "2023-01-31", initializeTimes);
@@ -29,36 +30,33 @@ export function BookingPage() {
             [e.target.name]: e.target.value
         }));
     }
-    
-    const [submitted, setSubmitted] = useState(false);
-    const handleSubmit = (e) => {
+
+    const navigate = useNavigate();
+    const submitForm = (e) => {
         e.preventDefault();
-        console.log("reservation form > submitted");
-        setSubmitted(true);
+        const submitted = submitAPI(reservationInfo);
+        if(submitted) {
+            const data = localStorage.getItem("data") ?? "[]";
+            const jsonData = JSON.parse(data);
+            const updatedData = [...jsonData, reservationInfo];
+            localStorage.setItem("data", JSON.stringify(updatedData));
+            navigate("/confirmation");
+        }
     }
 
     return (
         <>
             <Header />
-            {
-                submitted ? 
-                <ContactForm 
-                    occasion={reservationInfo.occasion}
-                    noOfGuests={reservationInfo.noOfGuests} 
-                    reservationDate={reservationInfo.reservationDate} 
-                    reservationTime={reservationInfo.reservationTime} 
-                /> : 
-                <BookingForm 
-                    handleChange={handleChange}
-                    handleSubmit={handleSubmit} 
-                    dispatch={dispatch}
-                    availableTimes={availableTimes}
-                    occasion={reservationInfo.occasion}
-                    noOfGuests={reservationInfo.noOfGuests} 
-                    reservationDate={reservationInfo.reservationDate} 
-                    reservationTime={reservationInfo.reservationTime} 
-                />
-            }
+            <BookingForm
+                handleChange={handleChange}
+                handleSubmit={submitForm}
+                dispatch={dispatch}
+                availableTimes={availableTimes}
+                occasion={reservationInfo.occasion}
+                noOfGuests={reservationInfo.noOfGuests}
+                reservationDate={reservationInfo.reservationDate}
+                reservationTime={reservationInfo.reservationTime}
+            />
             <BasicFooter />
         </>
     );
