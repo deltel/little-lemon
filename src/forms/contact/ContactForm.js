@@ -7,7 +7,7 @@ import diningArea from "../dining-area.jpg";
 import "./ContactForm.css";
 import { ReservationSummary } from "./reservation-summary/ReservationSummary";
 
-export function ContactForm() {
+export function ContactForm({ occasion, noOfGuests, reservationDate, reservationTime }) {
     const [fullName, setFullName] = useState("");
     const [email, setEmail] = useState("");
     const [telephone, setTelephone] = useState("");
@@ -20,9 +20,9 @@ export function ContactForm() {
                 </IconButton>
                 <ImageContainer className="reservation-img-container" img={diningArea} altText="dining area" imgClassName="reservation-img" />
                 <p className="reservation-description">Here you can fill in all the details required for your reservation. You choose the date, the time and the number of guests.</p>
-                <ReservationSummary noOfGuests={1} reservationDate="2023-01-30" reservationTime="17:00" />
+                <ReservationSummary occasion={occasion} noOfGuests={noOfGuests} reservationDate={reservationDate} reservationTime={reservationTime} />
             </section>
-            <form className="form">
+            <form title="contact form" className="form">
                 <h2>Customer Info</h2>
                 <p className="description">Please fill in your contact details so we may email you the reservation details and contact you if necessary.</p>
                 <section className="form-group contact-group">
