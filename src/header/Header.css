@@ -32,6 +32,7 @@ header .nav-list {
     position: absolute;
     left: 0;
     width: 10rem;
+    z-index: 1;
 }
 
 header .nav-list.closed {

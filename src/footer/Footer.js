@@ -20,9 +20,9 @@ export function Footer() {
             <section className="footer-section">
                 <h6 className="footer-heading">SOCIAL MEDIA LINKS</h6>
                 <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">Twitter</a></li>
+                    <li><a href="https://www.facebook.com/">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/">Instagram</a></li>
+                    <li><a href="https://twitter.com/home">Twitter</a></li>
                 </ul>
             </section>
         </footer>

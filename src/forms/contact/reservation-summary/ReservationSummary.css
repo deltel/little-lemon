@@ -1,0 +1,14 @@
+.summary {
+    display: none;
+}
+
+@media (min-width: 900px) {
+    .summary {
+        background-color: #edefee;
+        display: flex;
+        justify-content: space-between;
+        padding-inline: 1em;
+        border-radius: 5px;
+        margin-top: 6em;
+    }
+}
