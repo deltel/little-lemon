@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import { BookingForm } from "../forms/booking/BookingForm";
 import { BasicFooter } from "../footer/BasicFooter";
 import { Header } from "../header/Header";
-import { fetchAPI, submitAPI } from "../temp";
 
 export const updateTimes = (_, action) => {
     if (action.type === "GET_AVAILABLE_TIMES") {
