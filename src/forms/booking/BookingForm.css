@@ -43,6 +43,23 @@
     gap: 1em;
 }
 
+.feedback-errors {
+    display: flex;
+    flex-direction: column;
+    max-width: 9em;
+    gap: 0.2em;
+}
+
+.error {
+    font-size: 0.7em;
+    color: red;
+    font-style: italic;
+}
+
+.error-highlight {
+    border-color: red;
+}
+
 @media (min-width: 900px) {
     .back-btn {
         display: none;
@@ -53,6 +70,7 @@
         padding: 2em 7em;
         gap: 2em;
         background-color: #495E57;
+        min-height: 75vh;
     }
 
     .form-companion {

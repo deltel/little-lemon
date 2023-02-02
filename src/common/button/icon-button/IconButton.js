@@ -1,9 +1,9 @@
 import React from "react";
 import "./IconButton.css";
 
-export function IconButton({ handleClick, btnClass = "", children }) {
+export function IconButton({ handleClick, btnClass = "", ariaLabel, children }) {
     return (
-        <button onClick={handleClick} className={"icon-button " + btnClass}>
+        <button aria-label={ariaLabel} onClick={handleClick} className={"icon-button " + btnClass}>
             {children}
         </button>
     );

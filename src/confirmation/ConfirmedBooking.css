@@ -1,0 +1,9 @@
+.confirmation {
+    text-align: center;
+}
+
+@media (min-width: 900px) {
+    .confirmation {
+        padding-inline: 5em;
+    }
+}

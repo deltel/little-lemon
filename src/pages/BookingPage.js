@@ -1,4 +1,7 @@
 import React, { useReducer, useState } from "react";
+import { Formik } from "formik";
+import { object, string, number, date } from 'yup';
+
 import { useNavigate } from "react-router-dom";
 import { BookingForm } from "../forms/booking/BookingForm";
 import { BasicFooter } from "../footer/BasicFooter";
@@ -32,31 +35,61 @@ export function BookingPage() {
     }
 
     const navigate = useNavigate();
-    const submitForm = (e) => {
-        e.preventDefault();
-        const submitted = submitAPI(reservationInfo);
-        if(submitted) {
+    const submitForm = (values) => {
+        const submitted = submitAPI(values);
+        if (submitted) {
             const data = localStorage.getItem("data") ?? "[]";
             const jsonData = JSON.parse(data);
             const updatedData = [...jsonData, reservationInfo];
             localStorage.setItem("data", JSON.stringify(updatedData));
-            navigate("/confirmation");
         }
     }
 
     return (
         <>
             <Header />
-            <BookingForm
-                handleChange={handleChange}
-                handleSubmit={submitForm}
-                dispatch={dispatch}
-                availableTimes={availableTimes}
-                occasion={reservationInfo.occasion}
-                noOfGuests={reservationInfo.noOfGuests}
-                reservationDate={reservationInfo.reservationDate}
-                reservationTime={reservationInfo.reservationTime}
-            />
+            <Formik
+                initialValues={{
+                    occasion: "birthday",
+                    noOfGuests: 0,
+                    reservationDate: "",
+                    reservationTime: ""
+                }}
+                validationSchema={object({
+                    occasion: string().required("Please select an occasion"),
+                    noOfGuests: number().required("Please enter the number of guests").positive("Please enter a number greater than 0").max(10, "The number of guests should not be greater than 10").integer(),
+                    reservationDate: date().default(() => new Date()),
+                    reservationTime: string().required("Please select a time")
+                })}
+                onSubmit={(values, { setSubmitting }) => {
+                    submitForm(values);
+                    setSubmitting(false);
+                    navigate("/confirmation");
+                }}
+            >
+                {({ values,
+                    errors,
+                    touched,
+                    handleChange,
+                    handleBlur,
+                    handleSubmit,
+                    isSubmitting, }) => (
+                    <BookingForm
+                        handleChange={handleChange}
+                        handleBlur={handleBlur}
+                        handleSubmit={handleSubmit}
+                        dispatch={dispatch}
+                        availableTimes={availableTimes}
+                        occasion={values.occasion}
+                        noOfGuests={values.noOfGuests}
+                        reservationDate={values.reservationDate}
+                        reservationTime={values.reservationTime}
+                        errors={errors}
+                        touched={touched}
+                        isSubmitting={isSubmitting}
+                    />
+                )}
+            </Formik>
             <BasicFooter />
         </>
     );

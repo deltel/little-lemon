@@ -17,11 +17,11 @@ export function Header() {
         <header>
             <nav>
                 <section className="nav-icons">
-                    <IconButton handleClick={() => setShowMenu(prev => !prev)} btnClass="nav-button">
+                    <IconButton ariaLabel="nav burger" handleClick={() => setShowMenu(prev => !prev)} btnClass="nav-button">
                         <img src={hamburger} alt="menu" />
                     </IconButton>
                     <img src={logo} alt="logo" className="logo" />
-                    <IconButton btnClass="nav-button">
+                    <IconButton ariaLabel="basket" btnClass="nav-button">
                         <img src={basket} alt="basket" />
                     </IconButton>
                 </section>
